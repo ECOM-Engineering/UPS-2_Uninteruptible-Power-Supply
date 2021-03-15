@@ -24,8 +24,13 @@
 
 ### UPS-2 Hat Firmware
 
-**Details in repository** 
+Firmware is running on the hat's STM32-G030 CPU for serial or parallel communication with the Raspberry  computer.
+
+**Details in repository** [UPS-2_PowerSupply_SW](https://github.com/ECOM-Klaus/UPS-2_PowerSupply_SW.git)
 
 ### UPS-2 Raspberry Software
 
-**Details in repository** 
+Python scripts for communication with the UPS-2 hat and optionally with user software.
+
+**Details in repository** [UPS-2_Raspberry_SW](https://github.com/ECOM-Klaus/UPS-2_Raspberry_SW.git)
+
