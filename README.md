@@ -20,9 +20,11 @@
 
 ### UPS-2 Hat Module
 
-![UPS-2 Hat]../images/UPS-2_cut.png
+**Details in repository UPS-2**_Hardware
 
-**Details in repository** 
+![UPS-2_cut](F:\kDrive\Projekte\Raspberry\UPS-2\UPS-2-Project-repository\UPS-2_Uninteruptible-Power-Supply\images\UPS-2_cut.png)
+
+
 
 ### UPS-2 Hat Firmware
 
