@@ -20,6 +20,8 @@
 
 ### UPS-2 Hat Module
 
+![UPS-2 Hat]../images/UPS-2_cut.png
+
 **Details in repository** 
 
 ### UPS-2 Hat Firmware
