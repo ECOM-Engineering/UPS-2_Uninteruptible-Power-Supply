@@ -22,7 +22,7 @@
 
 **Details in repository UPS-2**_Hardware
 
-![UPS-2_cut](images/UPS-2_640px.png)
+![UPS-2_cut](images/UPS-2_640px.png) 
 
 
 
