@@ -30,7 +30,7 @@ UPS-2 can be controlled by software commands from the Raspberry and/or by the on
 
 
 
-![UPS-2_cut](Images/Connections.png) 
+![UPS-2 Hat](images/Connections.png) 
 
 
 
