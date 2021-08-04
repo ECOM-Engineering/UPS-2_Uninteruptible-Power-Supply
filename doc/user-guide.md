@@ -26,7 +26,9 @@ UPS-2 can be controlled by software commands from the Raspberry and/or by the on
 
 ### UPS-2 Power Supply preparation
 
-Connector J3  
+### Connector J3 to Raspberry Pi
+
+In the original layout uses a stack through connector. This needs an additional long pin header (Digikey PN 1528-1783-ND )for the connection to the Raspberry CPU. (included in the hardware bill of material).
 
 ### Firmware Installation or Update
 
@@ -43,7 +45,7 @@ There are different possibilities for programming an empty flash.
 
 Please download the free [STM32CubeProgammer](https://www.st.com/en/development-tools/stm32cubeprog.html) for programming. You also need a [TTL-232R 3V3](https://www.ftdichip.com/Support/Documents/DataSheets/Cables/DS_TTL-232R_CABLES.pdf) cable from FTDI.
 
-1. Remove UPS-2 from Raspberry-Pi
+1. Remove UPS-2 hardware from Raspberry-Pi
 
 2. Connect FTDI cable to UPS-2:  
    GND (black wire) to J3 Pin 39;   
@@ -63,9 +65,14 @@ Please download the free [STM32CubeProgammer](https://www.st.com/en/development-
 
 #### UPS-2 Firmware Update 
 
+UPS-2 must be already installed and working in order to update the firmware for the UPS-2 microcontroller.
+
+UPS-2 Raspberry Software includes convenient Firmware update scripts. Use the update function of the UPS-2 GUI or without GUI use the update script ups2_update.py. 
+
+Latest stable power supply firmware  [(UPS-2_G030_Vxx.bin)](https://github.com/ECOM-Engineering/UPS-2_PowerSupply_FW/blob/develop/Debug/UPS-2_G030.bin) can be found in the UPS2 github repository.  
+Please download it to your UPS-2 directory.
 
 
-todo doc
 
 ### Raspberry-Pi Preparation
 
