@@ -6,15 +6,27 @@
 
 ## Hat Solution For Raspberry Pi Computers
 
+<figure>
+  <img
+  src="../images/UPS-2_Connected.png" 
+  alt="UPS-2 with Battery Backup">
+    <figcaption><b>UPS-2 UPS-2 with Battery Backup monted on Raspberry 4B</b></figcaption>
+</figure>
+
+
+
 UPS-2 is a wide input range, high efficiency power supply for Raspberry Pi computers. It features a main input and a backup input. In case of power fail or under voltage at the main input,  backup input becomes active  with no interruption or spike on the Raspberry 5V, 3A supply output.   
 Firmware provides optical and software feedback on operation state, including voltage levels, warnings and CPU temperature.  
-UPS-2 can be controlled by software commands from the Raspberry and/or by the on-board  push button. Power supply commands include POWER OFF, START, STANDBY, and RESTART. 
+
+## Hardware Technical Data
+
+UPS-2 can be controlled by software commands from the Raspberry and/or by the on-board  push button. Power supply commands include POWER OFF, START, STANDBY, RESTART an Firmware Update. 
 
 - Compatible with Raspberry models 3, 3B, 4B and zero W
 - High efficiency power supply with output 5V, 3A
 - Main input voltage range 8V ... 18V
 - Shutdown function with real power-off  
-- Battery standby current < 20uA @9V
+- Battery quiscent current < 20uA @9V
 - Battery voltage 6.5V ... 18V
 - Nearly no self heating thanks to outstanding conversion efficiency
 - Communication with Pi via serial UART or parallel port
@@ -76,7 +88,7 @@ Please download it to your UPS-2 directory.
 
 ### Raspberry-Pi Preparation
 
-1. Clone or download [UPS-2 Raspberry Software](https://github.com/ECOM-Engineering/UPS-2_Raspberry _SW) into a Raspberry directory (i.e.  /home/pi/Projects/UPS2) 
+1. Clone or download [UPS-2 Raspberry Software]https://github.com/ECOM-Engineering/UPS-2_Raspberry_SW.git into a Raspberry directory (i.e.  /home/pi/Projects/UPS2) 
 2. Install libgpiod library  
     `sudo apt install python3-libgpiod`
 3. Activate pullup resistor in file */boot/config.txt* if port BCM20 is free and/or using parallel mode   
@@ -171,13 +183,53 @@ Note 2): Parallel mode is optional. Leave J4 open. Use serial mode, if not used 
 
 ## GUI-Graphical User Interface
 
-Hyperlink to figure
+The optional UPS-2 GUI is part of the sub-project [UPS-2_Raspberry_SW](https://github.com/ECOM-Engineering/UPS-2_Raspberry_SW.git) .  It allows control of all functions of the Power Supply Hardware. For headless applications, the GUI may be accessed by a VPN client from any device. 
+
+This optional interface ups-2_GUI.py is built with  the [PySimplGUI Library](https://github.com/PySimpleGUI/PySimpleGUI) library. 
+
+<figure>
+  <img
+  src="../images/GUI-Main+Batt.png" 
+  alt="UPS-2 GUI: Main and Battery OK">
+    <figcaption><b>UPS-2 GUI: Main and Battery OK, Main Suppply selected</b></figcaption>
+</figure>
+
+
+
+<figure>
+  <img
+  src="../images/GUI-PopRestart.png" 
+  alt="UPS-2 GUI: Restart Pi Command">
+    <figcaption><b>UPS-2 GUI: Restart selected after delay</b></figcaption>
+</figure>
+[Find more pictures here](../images/))
+
+Note: This interface needs Raspberry Pi operation system including graphical drivers.
 
 
 
 ## Software API
 
+The UPS-2 Software residing on the Raspberry Computer is divided in 4 parts.
+
+```mermaid
+graph
+G[ups2_GUI.py]
+I[ups2_Interface.py]
+S[ups2_serial.py]
+U(User App)
+M[Mutual Exclusion fcntl]
+UPS-2[UPS-2 Hardware]
+G --- I
+I --- M
+S --- M
+U .- I
+M --- R(Raspberry serial UART)
+R ---|ports BCM14,mBCM15| UPS-2
+style UPS-2 fill: #1Fff63
+```
+
+For more details refer to [UPS-2_Raspberry_SW](https://github.com/ECOM-Engineering/UPS-2_Raspberry_SW.git)
 
 
-## Technical Data
 
