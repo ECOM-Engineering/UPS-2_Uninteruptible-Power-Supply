@@ -1,6 +1,8 @@
-
+(C) 2021 Klaus Mezger, document licensed under MIT open source license 
 
 # USER MANUAL
+
+
 
 # UPS-2 Uninterruptible Power Supply 
 
@@ -10,8 +12,9 @@
   <img
   src="../images/UPS-2_Connected.png" 
   alt="UPS-2 with Battery Backup">
-    <figcaption><b>UPS-2 UPS-2 with Battery Backup monted on Raspberry 4B</b></figcaption>
+    <figcaption><b>UPS-2 UPS-2 with Battery Backup mounted on Raspberry 4B</b></figcaption>
 </figure>
+
 
 
 
@@ -40,7 +43,7 @@ UPS-2 can be controlled by software commands from the Raspberry and/or by the on
 
 ### Connector J3 to Raspberry Pi
 
-In the original layout uses a stack through connector. This needs an additional long pin header (Digikey PN 1528-1783-ND )for the connection to the Raspberry CPU. (included in the hardware bill of material).
+In the original layout uses a stack through connector. This needs an additional long pin header ([Digikey PN 1528-1783-ND](https://www.digikey.com/en/products/detail/adafruit-industries-llc/1979/6238003?s=N4IgTCBcDaIIwFYwA4C0cDsyDMqByAIiALoC%2BQA) )for the connection to the Raspberry CPU. (included in the hardware bill of material).
 
 ### Firmware Installation or Update
 
@@ -185,7 +188,7 @@ Note 2): Parallel mode is optional. Leave J4 open. Use serial mode, if not used 
 
 The optional UPS-2 GUI is part of the sub-project [UPS-2_Raspberry_SW](https://github.com/ECOM-Engineering/UPS-2_Raspberry_SW.git) .  It allows control of all functions of the Power Supply Hardware. For headless applications, the GUI may be accessed by a VPN client from any device. 
 
-This optional interface ups-2_GUI.py is built with  the [PySimplGUI Library](https://github.com/PySimpleGUI/PySimpleGUI) library. 
+This optional interface ups-2_GUI.py is built with  the [PySimplGUI Library](https://github.com/PySimpleGUI/PySimpleGUI) library. 
 
 <figure>
   <img
@@ -212,6 +215,9 @@ Note: This interface needs Raspberry Pi operation system including graphical dri
 
 The UPS-2 Software residing on the Raspberry Computer is divided in 4 parts.
 
+
+User applications can access UPS2 data and execute commands via the API functions in module ups2_Interface.py. Same interface is used by the graphical interface ups2_GUI. Refer to the source code of  ups2_Interface.py and the example testInterface.py for more information.
+
 ```mermaid
 graph
 G[ups2_GUI.py]
@@ -227,6 +233,9 @@ U .- I
 M --- R(Raspberry serial UART)
 R ---|ports BCM14,mBCM15| UPS-2
 style UPS-2 fill: #1Fff63
+style I fill: #1Fffff
+style U fill: #1Fffff
+
 ```
 
 For more details refer to [UPS-2_Raspberry_SW](https://github.com/ECOM-Engineering/UPS-2_Raspberry_SW.git)
